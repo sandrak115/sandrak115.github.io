@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <title>on_mouse_move</title>
+</head>
+<body>
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key" alt="key image">
+      <img src="./img/key.png" class="key"alt="key image">
+
+      <script>
+            function sizeR(min, max) {
+                  min = Math.ceil(40);
+                  max = Math.ceil(150);
+                  return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            let key = document.querySelectorAll('.key');
+                  for (let i = 0; i < key.length; i++) {
+                        key[i].style.left = Math.floor(Math.random()*99) + 'vw';
+                        key[i].style.top = Math.floor(Math.random()*99) + 'vw';
+                        key[i].style.width = sizeR() + 'px';
+                  }
+
+            function rotateKey() {
+                  key.forEach(function(key){
+                        let x = (key.getBoundingClientRect().left) + (key.clientWidth / 2);
+                        let y = (key.getBoundingClientRect().top) + (key.clientHeight / 2);
+
+
+                        let radian = Math.atan2(event.pageX - x, event.pageY - y);
+
+
+                        let rot = (radian * (180 / Math.PI) * -1) + 270;
+                        key.style.transform = "rotate(" + rot + "deg)";
+                  });
+            }
+            document.querySelector("body").addEventListener('mousemove', rotateKey);
+      </script>
+</body>
+</html>
